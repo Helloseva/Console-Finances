@@ -114,13 +114,11 @@ console.log( "Net total amount: $" + sumProfits)
 // Calculate The average of the changes in Profit/Losses over the entire period.
 
 var change = [];
-
 for (let i=1; i<profits.length; i++) {
     change.push(profits[i] - profits[i-1]);
 }
 
 var changeTotal = 0;
-
 for(let i=0; i< change.length; i++) {
     changeTotal += change[i];
 }
@@ -128,3 +126,24 @@ for(let i=0; i< change.length; i++) {
 var averageChange = (changeTotal/change.length).toFixed(2);
 
 console.log("Average Change: $" + averageChange)
+
+// Calculate the greatest increase in profits (date and amount) over the entire period.
+
+var dates = [];
+var maxChange = profits[0];
+var maxChangeDate = dates[0];
+var previousValue;
+var currentValue;
+for (let i = 1; i < totalMonths; i++) {
+    // Assigning the current and previous values to the declared variables
+    previousValue = profits[i - 1];
+    currentValue = profits[i];
+
+    difference = currentValue - previousValue;
+    if (difference > maxChange) {
+        maxChange = difference;
+        maxChangeDate = dates[i];
+    }
+
+}
+console.log("Greatest Increase in Profits:", maxChangeDate, "($" + maxChange + ')')
