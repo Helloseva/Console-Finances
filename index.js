@@ -95,26 +95,21 @@ var totalMonths = finances.length;
 console.log("Financial Analysis\n-------------------");
 console.log("Total Months: " + totalMonths)
 
-//calculating The net total amount of Profit/Losses over the entire period.
+// Calculate the net total amount of Profit/Losses over the entire period.
 
-// Declare different variables to store data for Dates and ProfitsAndLosses 
-var dates = [];
-var profitsAndLosses = [];
-// Unpack/extract dates and profiAndLoss values from the finances array at index i
-for (let i = 0; i < totalMonths; i++) {
+var profits = [];
 
-    let entry = finances[i];
-    dates.push(entry[0]);
-    profitsAndLosses.push(entry[1]);
-
+for (let i=0; i < finances.length; i++) {
+   profits.push(finances[i][1]);
 }
-// console.log(dates);
-// console.log(profitsAndLosses)
 
-// Computing the net total amount of Profit/Losses over the entire period
-var sum = 0
-for (let i = 0; i < profitsAndLosses.length; i++) {
-    sum = sum + profitsAndLosses[i];
+var sumProfits = 0;
+
+for(let i=0; i < profits.length; i++) {
+    sumProfits += profits[i];
 }
-console.log("Total: " + sum)
+
+console.log( "Net total amount: $" + sumProfits)
+
+// Calculate The average of the changes in Profit/Losses over the entire period.
 
