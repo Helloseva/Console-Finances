@@ -129,37 +129,42 @@ console.log("Average Change: $" + averageChange)
 
 // Calculate the greatest increase in profits (date and amount) over the entire period.
 
-var dates = [];
 var maxChange = profits[0];
-var maxChangeDate = dates[0];
-var previousValue;
-var currentValue;
-for (let i = 1; i < totalMonths; i++) {
-    previousValue = profits[i - 1];
-    currentValue = profits[i];
+var maxChangeDate = 0;
 
-    difference = currentValue - previousValue;
-    if (difference > maxChange) {
-        maxChange = difference;
-        maxChangeDate = dates[i];
-    }
-
+for (let i=0; i < profits.length -1; i++) {
+if(profits[i]>maxChange) {
+    maxChange = profits[i];
+    maxChangeDate = i;
+    dateOfMaxChange = finances[i];
+    
 }
-console.log("Greatest Increase in Profits:", maxChangeDate, "($" + maxChange + ')')
+
+    }
+    
+
+console.log("Greatest Increase in Profits:", dateOfMaxChange[0] + " " + "($" + maxChange + ')')
 
 // Calculate the greatest decrease in losses (date and amount) over the entire period. 
 
 var maxDecrease = profits[0];
-var maxDecreaseDate = dates[0];
+var maxDecreaseDate = 0;
 
-for (var i = 0; i < totalMonths; i++) {
-
-    difference = profits[i] - profits[i - 1];
-
-    if (difference < maxDecrease) {
-        maxDecrease = difference
-        maxDecreaseDate = dates[i];
-    }
+for (let i=0; i < profits.length -1; i++) {
+if(profits[i]<maxDecrease) {
+    maxDecrease = profits[i];
+    maxDecreaseDate = i;
+    dateOfMaxDecrease = finances[i];
+    
 }
 
-console.log("Greatest Decrease in Profits: " + maxDecreaseDate, "($" + maxDecrease + ")")
+    }
+    
+
+console.log("Greatest Decrease in Profits:", dateOfMaxDecrease[0] + " " + "($" + maxDecrease + ')')
+
+
+
+
+
+
