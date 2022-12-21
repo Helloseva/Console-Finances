@@ -139,10 +139,8 @@ if(profits[i]>maxChange) {
     dateOfMaxChange = finances[i];
     
 }
-
     }
     
-
 console.log("Greatest Increase in Profits:", dateOfMaxChange[0] + " " + "($" + maxChange + ')')
 
 // Calculate the greatest decrease in losses (date and amount) over the entire period. 
@@ -157,10 +155,8 @@ if(profits[i]<maxDecrease) {
     dateOfMaxDecrease = finances[i];
     
 }
-
     }
     
-
 console.log("Greatest Decrease in Profits:", dateOfMaxDecrease[0] + " " + "($" + maxDecrease + ')')
 
 
