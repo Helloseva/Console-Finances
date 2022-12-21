@@ -135,7 +135,6 @@ var maxChangeDate = dates[0];
 var previousValue;
 var currentValue;
 for (let i = 1; i < totalMonths; i++) {
-    // Assigning the current and previous values to the declared variables
     previousValue = profits[i - 1];
     currentValue = profits[i];
 
@@ -147,3 +146,20 @@ for (let i = 1; i < totalMonths; i++) {
 
 }
 console.log("Greatest Increase in Profits:", maxChangeDate, "($" + maxChange + ')')
+
+// Calculate the greatest decrease in losses (date and amount) over the entire period. 
+
+var maxDecrease = profits[0];
+var maxDecreaseDate = dates[0];
+
+for (var i = 0; i < totalMonths; i++) {
+
+    difference = profits[i] - profits[i - 1];
+
+    if (difference < maxDecrease) {
+        maxDecrease = difference
+        maxDecreaseDate = dates[i];
+    }
+}
+
+console.log("Greatest Decrease in Profits: " + maxDecreaseDate, "($" + maxDecrease + ")")
