@@ -113,3 +113,18 @@ console.log( "Net total amount: $" + sumProfits)
 
 // Calculate The average of the changes in Profit/Losses over the entire period.
 
+var change = [];
+
+for (let i=1; i<profits.length; i++) {
+    change.push(profits[i] - profits[i-1]);
+}
+
+var changeTotal = 0;
+
+for(let i=0; i< change.length; i++) {
+    changeTotal += change[i];
+}
+
+var averageChange = (changeTotal/change.length).toFixed(2);
+
+console.log("Average Change: $" + averageChange)
