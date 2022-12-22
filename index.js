@@ -95,6 +95,7 @@ var totalMonths = finances.length;
 console.log("Financial Analysis\n-------------------");
 console.log("Total Months: " + totalMonths)
 
+
 // Calculate the net total amount of Profit/Losses over the entire period.
 
 var profits = [];
@@ -111,7 +112,10 @@ for(let i=0; i < profits.length; i++) {
 
 console.log( "Net total amount: $" + sumProfits)
 
+
+
 // Calculate The average of the changes in Profit/Losses over the entire period.
+
 
 var change = [];
 for (let i=1; i<profits.length; i++) {
@@ -127,37 +131,47 @@ var averageChange = (changeTotal/change.length).toFixed(2);
 
 console.log("Average Change: $" + averageChange)
 
+
 // Calculate the greatest increase in profits (date and amount) over the entire period.
 
-var maxChange = profits[0];
+
+var maxChange = change[0];
 var maxChangeDate = 0;
 
-for (let i=0; i < profits.length -1; i++) {
-if(profits[i]>maxChange) {
-    maxChange = profits[i];
+for (let i=0; i < change.length -1; i++) {
+if(change[i]>maxChange) {
+    maxChange = change[i];
     maxChangeDate = i;
-    dateOfMaxChange = finances[i];
+    dateOfMaxChange = finances[i+1];
     
 }
     }
+
+var maxIncreaseInProfits = dateOfMaxChange[0] + " " + "($" + maxChange + ")";
     
-console.log("Greatest Increase in Profits:", dateOfMaxChange[0] + " " + "($" + maxChange + ')')
+console.log("Greatest Increase in Profits: " + maxIncreaseInProfits)
+
+
 
 // Calculate the greatest decrease in losses (date and amount) over the entire period. 
 
-var maxDecrease = profits[0];
+var maxDecrease = change[0];
 var maxDecreaseDate = 0;
 
-for (let i=0; i < profits.length -1; i++) {
-if(profits[i]<maxDecrease) {
-    maxDecrease = profits[i];
+for (let i=0; i < change.length -1; i++) {
+if(change[i]<maxDecrease) {
+    maxDecrease = change[i];
     maxDecreaseDate = i;
-    dateOfMaxDecrease = finances[i];
+    dateOfMaxDecrease = finances[i+1];
     
 }
     }
     
-console.log("Greatest Decrease in Profits:", dateOfMaxDecrease[0] + " " + "($" + maxDecrease + ')')
+var maxDecreaseInProfits = dateOfMaxDecrease[0] + " " + "($" + maxDecrease + ")"; 
+    
+console.log("Greatest Decrease in Profits: " + maxDecreaseInProfits)
+
+
 
 
 
