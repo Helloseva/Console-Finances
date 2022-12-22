@@ -17,7 +17,7 @@ This activity has been done as a part of the bootcamp's weekly challenge. In thi
 - The greatest increase in profits (date and amount) over the entire period.
 - The greatest decrease in losses (date and amount) over the entire period.
 
-You need to open the console to see the results since the final code prints the analysis to the console.
+You need to open the console to see the results since the final code prints the analysis to the console. In this task I creasted variables, used indexing arrays, , wrote loops and if statements.
 
 
 ## Table of Contents (Optional)
@@ -43,7 +43,7 @@ This page is about using basic JavaScript skills to create a financial analysis 
 Screeshot of the Web Page:
 
 
-![screenshot of page](images/screenshot01.png)
+![screenshot of page](images/Screenshot.png)
 
 
 ## Credits
